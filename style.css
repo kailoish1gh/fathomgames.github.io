@@ -1,0 +1,174 @@
+@font-face {
+    font-family: 'Bloodcrow';
+    src: url('bloodcrow.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at top, #161616 0%, #050505 70%);
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.015),
+            rgba(255,255,255,0.015) 1px,
+            transparent 1px,
+            transparent 3px
+        );
+    pointer-events: none;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+h1 {
+    font-family: 'Bloodcrow', sans-serif;
+    font-size: clamp(4rem, 10vw, 9rem);
+    letter-spacing: 8px;
+    margin-bottom: 1.5rem;
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.2),
+        0 0 30px rgba(150,0,0,0.3);
+}
+
+.tagline {
+    font-size: 1.3rem;
+    color: #bbbbbb;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    border: 1px solid #666;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    transition: all 0.25s ease;
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(5px);
+}
+
+.download-btn:hover {
+    transform: translateY(-3px);
+    border-color: white;
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 0 25px rgba(255,255,255,0.08);
+}
+
+.about {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    padding: 5rem 10%;
+}
+
+.card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card h2 {
+    font-family: 'Bloodcrow', sans-serif;
+    letter-spacing: 4px;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.card p {
+    color: #c8c8c8;
+    line-height: 1.7;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+
+.links-section {
+    padding: 2rem 10% 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.links-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.links-card h2 {
+    font-family: 'Bloodcrow', sans-serif;
+    letter-spacing: 4px;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.store-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.store-links a,
+.youtube-link {
+    display: inline-block;
+    padding: 0.9rem 1.8rem;
+    border: 1px solid #666;
+    color: white;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    background: rgba(255,255,255,0.03);
+}
+
+.store-links a:hover,
+.youtube-link:hover {
+    transform: translateY(-3px);
+    border-color: white;
+    box-shadow: 0 0 20px rgba(255,255,255,0.08);
+}
+
+.small-note {
+    margin-top: 1rem;
+    color: #888;
+    font-size: 0.9rem;
+}
