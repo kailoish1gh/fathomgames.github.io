@@ -1,0 +1,196 @@
+
+@font-face {
+    font-family: 'Bloodcrow';
+    src: url('bloodcrow.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #020202;
+    color: white;
+    overflow-x: hidden;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.static {
+    position: fixed;
+    inset: 0;
+    opacity: 0.08;
+    pointer-events: none;
+    background-image:
+        repeating-radial-gradient(circle at center,
+        rgba(255,255,255,0.08) 0px,
+        transparent 1px,
+        transparent 2px);
+    animation: flicker 0.12s infinite;
+}
+
+.scanlines {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.12;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.04),
+            rgba(255,255,255,0.04) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+}
+
+.vignette {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle,
+        transparent 45%,
+        rgba(0,0,0,0.5) 100%);
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 2rem;
+}
+
+.content {
+    width: 100%;
+    max-width: 1150px;
+    text-align: center;
+}
+
+.studio {
+    color: #777;
+    letter-spacing: 6px;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+}
+
+h1 {
+    font-family: 'Bloodcrow', Arial, sans-serif;
+    font-size: clamp(4rem, 12vw, 9rem);
+    letter-spacing: 12px;
+    margin-bottom: 2rem;
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.1),
+        0 0 30px rgba(255,255,255,0.08),
+        0 0 60px rgba(255,255,255,0.03);
+}
+
+.description {
+    max-width: 850px;
+    margin: 0 auto 4rem;
+    color: #c4c4c4;
+    line-height: 1.9;
+    font-size: 1.15rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.card {
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 22px;
+    padding: 2rem;
+    backdrop-filter: blur(8px);
+    transition: 0.25s ease;
+    box-shadow: inset 0 0 30px rgba(255,255,255,0.015);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255,255,255,0.2);
+}
+
+.card h2,
+.stores-title {
+    font-family: 'Bloodcrow', Arial, sans-serif;
+    letter-spacing: 5px;
+}
+
+.card h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.card p {
+    color: #bdbdbd;
+    line-height: 1.8;
+}
+
+.stores-title {
+    margin-bottom: 1.5rem;
+    color: #a0a0a0;
+    font-size: 1.5rem;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.icons a {
+    width: 74px;
+    height: 74px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: white;
+    text-decoration: none;
+    font-size: 1.9rem;
+    transition: 0.25s ease;
+    backdrop-filter: blur(6px);
+}
+
+.icons a:hover {
+    transform: translateY(-5px) scale(1.03);
+    border-color: rgba(255,255,255,0.25);
+    box-shadow: 0 0 30px rgba(255,255,255,0.06);
+}
+
+footer {
+    text-align: center;
+    color: #555;
+    padding: 2rem;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.07; }
+    50% { opacity: 0.11; }
+    100% { opacity: 0.08; }
+}
+
+@media (max-width: 700px) {
+    .description {
+        font-size: 1rem;
+    }
+
+    h1 {
+        letter-spacing: 5px;
+    }
+}
